@@ -2,6 +2,7 @@
 /**
  * Dashboard Enterprise COMPLETO con Sidebar
  * RUTA: ~/app-php/public/dashboard.php
+ * VERSIÓN: 2.0 - Enlaces funcionales
  */
 
 require_once dirname(__DIR__) . '/config/autoload.php';
@@ -860,11 +861,11 @@ function timeAgo($datetime) {
                 <i class="fas fa-home"></i>
                 <span>Dashboard</span>
             </a>
-            <a href="#" class="sidebar-link">
-                <i class="fas fa-chart-line"></i>
-                <span>Analytics</span>
+            <a href="prediction.php" class="sidebar-link">
+                <i class="fas fa-robot"></i>
+                <span>IA Predictiva</span>
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="realtime.php" class="sidebar-link">
                 <i class="fas fa-clock"></i>
                 <span>Tiempo Real</span>
             </a>
@@ -872,19 +873,19 @@ function timeAgo($datetime) {
         
         <div class="sidebar-section">
             <div class="sidebar-section-title">Gestión</div>
-            <a href="#" class="sidebar-link">
+            <a href="employees.php" class="sidebar-link">
                 <i class="fas fa-users"></i>
                 <span>Empleados</span>
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="shifts.php" class="sidebar-link">
                 <i class="fas fa-calendar-alt"></i>
                 <span>Turnos</span>
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="departments.php" class="sidebar-link">
                 <i class="fas fa-building"></i>
                 <span>Departamentos</span>
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="locations.php" class="sidebar-link">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>Ubicaciones</span>
             </a>
@@ -892,15 +893,15 @@ function timeAgo($datetime) {
         
         <div class="sidebar-section">
             <div class="sidebar-section-title">Reportes</div>
-            <a href="#" class="sidebar-link">
+            <a href="reports.php" class="sidebar-link">
                 <i class="fas fa-file-alt"></i>
                 <span>Informes</span>
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="export.php" class="sidebar-link">
                 <i class="fas fa-download"></i>
                 <span>Exportar</span>
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="analytics.php" class="sidebar-link">
                 <i class="fas fa-chart-bar"></i>
                 <span>Estadísticas</span>
             </a>
@@ -908,15 +909,15 @@ function timeAgo($datetime) {
         
         <div class="sidebar-section">
             <div class="sidebar-section-title">Sistema</div>
-            <a href="#" class="sidebar-link">
+            <a href="alerts.php" class="sidebar-link">
                 <i class="fas fa-bell"></i>
                 <span>Alertas</span>
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="settings.php" class="sidebar-link">
                 <i class="fas fa-cog"></i>
                 <span>Configuración</span>
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="prediction.php" class="sidebar-link">
                 <i class="fas fa-robot"></i>
                 <span>IA Predictiva</span>
             </a>
@@ -1056,7 +1057,7 @@ function timeAgo($datetime) {
                             Histórico real y proyección IA
                         </p>
                     </div>
-                    <a href="#" class="card-action">Ver reportes <i class="fas fa-arrow-right ml-1"></i></a>
+                    <a href="reports.php" class="card-action">Ver reportes <i class="fas fa-arrow-right ml-1"></i></a>
                 </div>
                 <div class="chart-container">
                     <canvas id="trendChart"></canvas>
@@ -1067,7 +1068,7 @@ function timeAgo($datetime) {
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">🚨 Alertas Activas</div>
-                    <a href="#" class="card-action">Ver todas →</a>
+                    <a href="alerts.php" class="card-action">Ver todas →</a>
                 </div>
                 
                 <?php if (empty($activeAlerts)): ?>
@@ -1101,7 +1102,7 @@ function timeAgo($datetime) {
         <div class="card" style="margin-bottom: 24px;">
             <div class="card-header">
                 <div class="card-title">🤖 Predicción IA por Departamento</div>
-                <a href="#" class="card-action">Análisis completo →</a>
+                <a href="prediction.php" class="card-action">Análisis completo →</a>
             </div>
             
             <table class="table">
@@ -1157,7 +1158,7 @@ function timeAgo($datetime) {
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">🗺️ Heatmap: Riesgo por Turno</div>
-                    <a href="#" class="card-action">Ver detalle →</a>
+                    <a href="analytics.php" class="card-action">Ver detalle →</a>
                 </div>
                 
                 <div style="margin-bottom: 16px;">
@@ -1188,7 +1189,7 @@ function timeAgo($datetime) {
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">⚠️ Empleados Alto Riesgo</div>
-                    <a href="#" class="card-action">Ver todos →</a>
+                    <a href="employees.php?filter=high_risk" class="card-action">Ver todos →</a>
                 </div>
                 
                 <?php if (empty($highRiskEmployees)): ?>
@@ -1238,7 +1239,7 @@ function timeAgo($datetime) {
         <div class="card" style="margin-bottom: 24px;">
             <div class="card-header">
                 <div class="card-title">⏱️ Registros Recientes de Hoy</div>
-                <a href="#" class="card-action">Ver historial completo →</a>
+                <a href="attendance_logs.php" class="card-action">Ver historial completo →</a>
             </div>
             
             <table class="table">
@@ -1294,27 +1295,27 @@ function timeAgo($datetime) {
             </div>
             
             <div class="quick-actions">
-                <a href="#" class="quick-action-btn">
+                <a href="employee_form.php" class="quick-action-btn">
                     <i class="fas fa-user-plus"></i>
                     <span>Nuevo Empleado</span>
                 </a>
-                <a href="#" class="quick-action-btn">
+                <a href="shift_form.php" class="quick-action-btn">
                     <i class="fas fa-calendar-plus"></i>
                     <span>Crear Turno</span>
                 </a>
-                <a href="#" class="quick-action-btn">
+                <a href="export.php" class="quick-action-btn">
                     <i class="fas fa-file-export"></i>
                     <span>Exportar Datos</span>
                 </a>
-                <a href="#" class="quick-action-btn">
+                <a href="report_absence.php" class="quick-action-btn">
                     <i class="fas fa-exclamation"></i>
                     <span>Reportar Ausencia</span>
                 </a>
-                <a href="#" class="quick-action-btn">
+                <a href="reports.php" class="quick-action-btn">
                     <i class="fas fa-chart-bar"></i>
                     <span>Ver Reportes</span>
                 </a>
-                <a href="#" class="quick-action-btn">
+                <a href="settings.php" class="quick-action-btn">
                     <i class="fas fa-cog"></i>
                     <span>Configurar</span>
                 </a>
