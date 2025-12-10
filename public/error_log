@@ -39089,3 +39089,143 @@ Stack trace:
          GROUP BY DATE(check_in)
          ORDER BY date ASC
 [10-Dec-2025 13:21:52 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:22:23 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:22:23 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:22:25 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:22:25 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:22:55 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:22:55 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:22:56 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:22:56 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:23:28 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:23:28 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:23:29 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:23:29 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:24:01 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:24:01 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:24:02 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:24:02 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:24:33 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:24:33 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:24:35 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:24:35 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:25:05 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:25:05 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:25:06 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:25:06 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:25:37 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:25:37 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
+[10-Dec-2025 13:25:38 America/Santiago] Query Error: SQLSTATE[HY093]: Invalid parameter number | SQL: SELECT 
+            DATE(check_in) as date,
+            COUNT(DISTINCT employee_id) as present_count,
+            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+         FROM attendance_logs
+         WHERE tenant_id = :tenant_id
+         AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+         GROUP BY DATE(check_in)
+         ORDER BY date ASC
+[10-Dec-2025 13:25:38 America/Santiago] Trend Error: SQLSTATE[HY093]: Invalid parameter number
