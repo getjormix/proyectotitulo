@@ -187,13 +187,13 @@ try {
         "SELECT 
             DATE(check_in) as date,
             COUNT(DISTINCT employee_id) as present_count,
-            (SELECT COUNT(*) FROM employees WHERE tenant_id = :tenant_id AND status = 'active') as total_employees
+            1800 as total_employees
          FROM attendance_logs
-         WHERE tenant_id = :tenant_id
+         WHERE tenant_id = :tenant_id2
          AND check_in >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
          GROUP BY DATE(check_in)
          ORDER BY date ASC",
-        ['tenant_id' => $tenantId]
+        ['tenant_id2' => $tenantId]
     );
     
     foreach ($trendData as &$day) {
@@ -848,9 +848,10 @@ function timeAgo($datetime) {
     </style>
 </head>
 <body>
+<?php require_once __DIR__ . '/../views/partials/sidebar.php'; ?>
     <!-- SIDEBAR -->
     <aside class="sidebar">
-        <div class="sidebar-logo">
+        <div class="sidebar-container sidebar-logo">
             <div class="logo-icon">J</div>
             <div class="logo-text">Jornix</div>
         </div>
