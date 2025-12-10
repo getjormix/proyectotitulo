@@ -1,0 +1,6 @@
+[09-Dec-2025 13:16:11 America/New_York] PHP Fatal error:  Uncaught Error: Undefined constant "PYTHON_API_BASE_URL" in /home/wwgetj/app-php/src/Services/PythonClient.php:6
+Stack trace:
+#0 Command line code(4): PythonClient->__construct()
+#1 {main}
+  thrown in /home/wwgetj/app-php/src/Services/PythonClient.php on line 6
+[10-Dec-2025 10:56:00 America/New_York] PHP Warning:  Undefined array key "HTTP_HOST" in /home/wwgetj/app-php/config/config.php on line 33

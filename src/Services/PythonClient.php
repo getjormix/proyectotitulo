@@ -1,60 +1,52 @@
 <?php
+namespace Services;
+
 class PythonClient {
     private $baseUrl;
-
+    
     public function __construct() {
-        $this->baseUrl = PYTHON_API_BASE_URL;
+        $this->baseUrl = 'http://api.getjornix.com';
     }
-
+    
     public function getHealth() {
         return $this->call('GET', '/health');
     }
-
-    public function getPredictions($tenant_id, $date = null) {
-        $payload = [
-            'tenant_id' => $tenant_id,
-            'date' => $date ?: date('Y-m-d')
-        ];
-        return $this->call('POST', '/predict', $payload);
+    
+    public function getPredictions($tenantId, $days = 30) {
+        return $this->call('GET', "/predict/risk?tenant_id={$tenantId}&days={$days}");
     }
-
-    public function trainModel($tenant_id, $from_date, $to_date) {
-        $payload = [
-            'tenant_id' => $tenant_id,
-            'from' => $from_date,
-            'to' => $to_date
-        ];
-        return $this->call('POST', '/train', $payload);
+    
+    public function trainModel($tenantId, $days = 90) {
+        return $this->call('POST', "/train/model?tenant_id={$tenantId}&days={$days}");
     }
-
-    private function call($method, $endpoint, $data = null) {
+    
+    public function getAttendanceData($tenantId, $days = 7) {
+        return $this->call('GET', "/data/attendance?tenant_id={$tenantId}&days={$days}");
+    }
+    
+    private function call($method, $endpoint) {
         $url = $this->baseUrl . $endpoint;
-        $curl = curl_init();
-
-        $options = [
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTPHEADER => [
-                'Content-Type: application/json',
-            ],
-        ];
-
-        if ($method === 'POST') {
-            $options[CURLOPT_POST] = true;
-            $options[CURLOPT_POSTFIELDS] = json_encode($data);
+        $ch = curl_init();
+        
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Accept: application/json'
+        ]);
+        
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        
+        if ($response === false) {
+            return ['success' => false, 'error' => 'API connection failed'];
         }
-
-        curl_setopt_array($curl, $options);
-        $response = curl_exec($curl);
-        $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
-
-        if ($httpCode !== 200) {
-            error_log("Python API Error: HTTP $httpCode - $response");
-            return null;
-        }
-
-        return json_decode($response, true);
+        
+        $data = json_decode($response, true);
+        $data['http_code'] = $httpCode;
+        
+        return $data;
     }
 }

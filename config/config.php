@@ -51,3 +51,5 @@ foreach ($directories as $dir) {
         mkdir($dir, 0755, true);
     }
 }
+// FastAPI Python URL
+define('PYTHON_API_BASE_URL', 'http://localhost:8000');
